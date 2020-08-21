@@ -162,7 +162,7 @@ const Form = props => {
                     </label>
                 </div>
                 <div className="submit-button">
-                    <button>Submit Order</button>
+                    <button disabled={values.name === "" ? disabled : null}>Submit Order</button>
                 </div>
             </form>
         </>
