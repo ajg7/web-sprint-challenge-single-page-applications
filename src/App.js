@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Route, Switch } from 'react-router-dom'
 import Home from "./components/Home"
 import Form from "./components/Form"
+import Confirmation from "./components/Confirmation"
 
 const App = () => {
   return (
@@ -13,6 +14,9 @@ const App = () => {
 
         <Route path="/pizza">
           <Form />
+        </Route>
+        <Route path="/confirmation">
+          <Confirmation />
         </Route>
       </Switch>
     </>
