@@ -8,15 +8,13 @@ const App = () => {
     <>
       <h1>Lambda Eats</h1>
       
-      <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
-        
-        <Route path="/pizza">
-          <Form />
-        </Route>
-      </Switch>
+      <Route path="/">
+        <Home />
+      </Route>
+
+      <Route path="/pizza">
+        <Form />
+      </Route>
     </>
   );
 };

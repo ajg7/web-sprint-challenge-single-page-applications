@@ -14,7 +14,7 @@ const Form = props => {
                 <h2>Build Your Own Pizza</h2>
             </div>
             <div>
-                <h2>Choice of Size</h2> <br />
+                <h2>Choice of Size</h2>
                 <h3>Required</h3>
             </div>
             <form>
@@ -30,7 +30,7 @@ const Form = props => {
                     </label>
                 </div>
                 <div>
-                    <h2>Choice of Sauce</h2> <br />
+                    <h2>Choice of Sauce</h2>
                     <h3>Required</h3>
                 </div>
                 <div className="sauce-selection">
@@ -64,12 +64,53 @@ const Form = props => {
                     </label>
                 </div>
                 <div>
-                    <h2>Add Toppings</h2> <br />
+                    <h2>Add Toppings</h2> 
                     <h3>Required</h3>
                 </div>
+                <div className="topping-selection">
+                    <label> Cheese
+                        <input 
+                        type="checkbox"
+                        name="cheese"
+                        
+                        />
+                    </label>
+                    <label> Pepperoni
+                        <input 
+                        type="checkbox"
+                        name="pepperoni"
+                        
+                        />
+                    </label>
+                    <label> Sausage
+                        <input 
+                        type="checkbox"
+                        name="sausage"
+                        
+                        />
+                    </label>
+                    <label> Mushrooms
+                        <input 
+                        type="checkbox"
+                        name="mushrooms"
+                        
+                        />
+                    </label>
+                </div>
                 <div>
-
-                
+                    <h2>Special Instructions</h2> 
+                    <h3>Optional</h3>
+                </div>
+                <div className="special-instructions">
+                    <label> Anything else you'd like to add?
+                        <input 
+                        name="specialInstructions"
+                        type="text"
+                        />
+                    </label>
+                </div>
+                <div className="submit-button">
+                    <button>Submit Order</button> 
                 </div>
             </form>
         </>
