@@ -11,11 +11,16 @@ describe('Team Builder Test', () => {
             .type("AJ")
             .should("have.value", "AJ")
         })
+    describe("Toppings Test", () => {
+        it('can select topping', () => {
+            cy.get('input[name="cheese"]').check().should('be.checked', 'checked')
+
+        })
+        })
     describe("Data Submission Test", () => {
         it("user can submit data", () => {
             cy.get('form').submit()
         })
     })
-    
     })
 })
