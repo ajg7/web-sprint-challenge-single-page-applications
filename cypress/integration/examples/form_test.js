@@ -1,6 +1,6 @@
 
 
-describe('Team Builder Test', () => {
+describe('Pizza Test', () => {
     it('can navigate to http://localhost:3000', () => {
         cy.visit('http://localhost:3000/pizza')
         cy.url().should('include', 'localhost')
