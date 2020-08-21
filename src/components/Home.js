@@ -11,7 +11,7 @@ const Home = props => {
             <div>
                 <h1>Lambda Eats</h1>
                 <nav>
-                    <button>Home</button>
+                    <Link to="/"><button>Home</button></Link>
                     <button>Help</button>
                 </nav>
             </div>
