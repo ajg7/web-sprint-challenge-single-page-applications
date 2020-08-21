@@ -1,26 +1,50 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import pizza from "../Assets/Pizza.jpg"
 
 const Form = props => {
+    const { submit, inputChange, values, checkboxChange, errors } = props;
+    const history = useHistory();
+
+    const onInputChange = event => {
+        const { name, value } = event.target;
+        inputChange(name, value);
+    }
+
+    const onCheckboxChange = event => {
+        const { name, checked } = event.target
+        checkboxChange(name, checked)
+      }
+
+    const onSubmit = event => {
+        event.preventDefault()
+        submit()
+        history.push("/pizza/confirmation")
+    }
+
     return(
         <>
             <h1>Build Your Own Pizza</h1>
             <div className="pizza-image">
                 <img src={pizza} alt="pizza"></img>
             </div>
+            <div className='errors'>
+                <div>{errors.name}</div>
+            </div>
             <div>
                 <h2>Build Your Own Pizza</h2>
             </div>
-            <form>
+            <form onSubmit={onSubmit}>
                 <div>
                     <h2>Name on the Order</h2>
                     <h4>Required</h4>
                 </div>
                     <label>
                         <input 
+                        onChange={onInputChange}
                         name="name"
                         type="text"
+                        value= {values.name}
                         />
                     </label>
                 <div>
@@ -29,7 +53,11 @@ const Form = props => {
                 </div>
                 <div className="size-selection">
                     <label>
-                        <select>
+                        <select
+                        onChange={onInputChange}
+                        value={values.size}
+                        name="size"
+                        >
                             <option value="">- Select -</option>
                             <option value="small">Small</option>
                             <option value="medium">Medium</option>
@@ -47,28 +75,32 @@ const Form = props => {
                         <input 
                             type="radio"
                             name="sauce"
-                            value="originalRed"
+                            value="Original Red"
+                            onChange={onInputChange}
                         />
                     </label>
                     <label>Garlic Ranch
                         <input 
                             type="radio"
                             name="sauce"
-                            value="garlicRanch"
+                            value="Garlic Ranch"
+                            onChange={onInputChange}
                         />
                     </label>
                     <label>BBQ Sauce
                         <input 
                             type="radio"
                             name="sauce"
-                            value="bbqSauce"
+                            value="BBQ Sauce"
+                            onChange={onInputChange}
                         />
                     </label>
                     <label>Spinach Alfredo
                         <input 
                             type="radio"
                             name="sauce"
-                            value="spinachAlfredo"
+                            value="Spinach Alfredo"
+                            onChange={onInputChange}
                         />
                     </label>
                 </div>
@@ -81,28 +113,32 @@ const Form = props => {
                         <input 
                         type="checkbox"
                         name="cheese"
-                        
+                        checked={values.toppings.cheese}
+                        onChange={onCheckboxChange}
                         />
                     </label>
                     <label> Pepperoni
                         <input 
                         type="checkbox"
                         name="pepperoni"
-                        
+                        checked={values.toppings.pepperoni}
+                        onChange={onCheckboxChange}
                         />
                     </label>
                     <label> Sausage
                         <input 
                         type="checkbox"
                         name="sausage"
-                        
+                        checked={values.toppings.sausage}
+                        onChange={onCheckboxChange}
                         />
                     </label>
                     <label> Mushrooms
                         <input 
                         type="checkbox"
                         name="mushrooms"
-                        
+                        checked={values.toppings.mushrooms}
+                        onChange={onCheckboxChange}
                         />
                     </label>
                 </div>
@@ -113,13 +149,15 @@ const Form = props => {
                 <div className="special-instructions">
                     <label> Anything else you'd like to add?
                         <input 
+                        onChange={onInputChange}
                         name="specialInstructions"
                         type="text"
+                        value= {values.specialInstructions}
                         />
                     </label>
                 </div>
                 <div className="submit-button">
-                    <Link to="/pizza/confirmation"><button>Submit Order</button></Link>
+                    <button>Submit Order</button>
                 </div>
             </form>
         </>
