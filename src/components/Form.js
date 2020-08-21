@@ -1,15 +1,13 @@
 import React from "react";
-
+import { Link } from "react-router-dom"
+import pizza from "../Assets/Pizza.jpg"
 
 const Form = props => {
-
-
-
     return(
         <>
             <h1>Build Your Own Pizza</h1>
             <div className="pizza-image">
-                <img src="" alt="pizza"></img>
+                <img src={pizza} alt="pizza"></img>
             </div>
             <div>
                 <h2>Build Your Own Pizza</h2>
@@ -121,7 +119,7 @@ const Form = props => {
                     </label>
                 </div>
                 <div className="submit-button">
-                    <button>Submit Order</button> 
+                    <Link to="/pizza/confirmation"><button>Submit Order</button></Link>
                 </div>
             </form>
         </>
