@@ -20,6 +20,7 @@ const Form = props => {
         event.preventDefault()
         submit()
         history.push("/pizza/confirmation")
+        
     }
 
     return(

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import formSchema from "./formSchema";
 import Home from "./components/Home";
@@ -23,8 +23,8 @@ const initialFormErrors ={
   name: ""
 }
 
-
 const App = () => {
+  const [pizza, setPizza] = useState({})
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
 
@@ -71,13 +71,16 @@ const App = () => {
     }
     console.log(newPizza)
     //database post request would go here
+    setPizza(newPizza)
   }
 
   return (
     <>
       <Switch>
         <Route path="/pizza/confirmation">
-          <Confirmation />
+          <Confirmation 
+          pizza={pizza}
+          />
         </Route>
 
         <Route path="/pizza">
