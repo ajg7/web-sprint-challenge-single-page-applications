@@ -4,6 +4,7 @@ import formSchema from "./formSchema";
 import Home from "./components/Home";
 import Form from "./components/Form";
 import Confirmation from "./components/Confirmation";
+import axios from "axios";
 import * as yup from "yup";
 
 const initialFormValues = {
@@ -73,10 +74,18 @@ const App = () => {
       toppings: Object.keys(formValues.toppings).filter(topping => formValues.toppings[topping]),
       specialInstructions: formValues.specialInstructions
     }
-    console.log(newPizza)
-    //database post request would go here
-    setPizza(newPizza)
+
+    axios.post("https://reqres.in/api/pizza", newPizza)
+      .then(response => {
+        console.log(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+      
+      setPizza(newPizza)
   }
+
 
   useEffect(() => {
     // 🔥 STEP 10- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
