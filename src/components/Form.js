@@ -19,7 +19,7 @@ const Form = props => {
                 </div>
                     <label>
                         <input 
-                        name="nameOnTheOrder"
+                        name="name"
                         type="text"
                         />
                     </label>
