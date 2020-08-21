@@ -8,15 +8,16 @@ const App = () => {
   return (
     <>
       <Switch>
-        <Route path="/">
-          <Home />
+        <Route path="/pizza/confirmation">
+          <Confirmation />
         </Route>
 
         <Route path="/pizza">
           <Form />
         </Route>
-        <Route path="/confirmation">
-          <Confirmation />
+
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </>
