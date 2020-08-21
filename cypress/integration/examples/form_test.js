@@ -14,7 +14,7 @@ describe('Team Builder Test', () => {
     describe("Toppings Test", () => {
         it('can select topping', () => {
             cy.get('input[name="cheese"]').check().should('be.checked', 'checked')
-
+            cy.get('input[name="pepperoni"]').check().should('be.checked', 'checked')
         })
         })
     describe("Data Submission Test", () => {

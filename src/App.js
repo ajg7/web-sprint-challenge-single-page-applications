@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import formSchema from "./formSchema";
 import Home from "./components/Home";
@@ -23,11 +23,8 @@ const initialFormErrors ={
   name: ""
 }
 
-const initialPizza = {}
 
 const App = () => {
-
-  const [pizza, setPizza] = useState(initialPizza);
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
 
