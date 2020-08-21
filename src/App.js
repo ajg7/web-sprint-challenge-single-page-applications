@@ -6,9 +6,7 @@ import Form from "./components/Form"
 const App = () => {
   return (
     <>
-      <h1>Lambda Eats</h1>
-      
-      {/* <Switch>*/}
+      <Switch>
         <Route path="/">
           <Home />
         </Route>
@@ -16,7 +14,7 @@ const App = () => {
         <Route path="/pizza">
           <Form />
         </Route>
-      {/*</Switch>*/}
+      </Switch>
     </>
   );
 };

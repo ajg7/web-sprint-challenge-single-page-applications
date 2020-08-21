@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Form = props => {
 
 
@@ -13,11 +14,21 @@ const Form = props => {
             <div>
                 <h2>Build Your Own Pizza</h2>
             </div>
-            <div>
-                <h2>Choice of Size</h2>
-                <h3>Required</h3>
-            </div>
             <form>
+                <div>
+                    <h2>Name on the Order</h2>
+                    <h3>Required</h3>
+                </div>
+                    <label>
+                        <input 
+                        name="nameOnTheOrder"
+                        type="text"
+                        />
+                    </label>
+                <div>
+                    <h2>Choice of Size</h2>
+                    <h3>Required</h3>
+                </div>
                 <div className="size-selection">
                     <label>
                         <select>
