@@ -2,9 +2,11 @@ import React from "react";
 import { useHistory } from "react-router-dom"
 import pizza from "../Assets/Pizza.jpg"
 
+
 const Form = props => {
-    const { submit, inputChange, values, checkboxChange, errors } = props;
+    const { submit, inputChange, values, checkboxChange, errors, disabled } = props;
     const history = useHistory();
+    let nameValue;
 
     const onInputChange = event => {
         const { name, value } = event.target;
@@ -20,8 +22,8 @@ const Form = props => {
         event.preventDefault()
         submit()
         history.push("/pizza/confirmation")
-        
     }
+
 
     return(
         <>
@@ -29,13 +31,15 @@ const Form = props => {
             <div className="pizza-image">
                 <img src={pizza} alt="pizza"></img>
             </div>
-            <div className='errors'>
-                <div>{errors.name}</div>
-            </div>
             <div>
                 <h2>Build Your Own Pizza</h2>
             </div>
             <form onSubmit={onSubmit}>
+                <div className='errors'>
+                    <div>
+                        <h3>{errors.name}</h3>
+                    </div>
+                </div>
                 <div>
                     <h2>Name on the Order</h2>
                     <h4>Required</h4>

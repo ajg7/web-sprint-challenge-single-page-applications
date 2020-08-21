@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import formSchema from "./formSchema";
 import Home from "./components/Home";
@@ -23,10 +23,14 @@ const initialFormErrors ={
   name: ""
 }
 
+const initialDisabled = true;
+
 const App = () => {
-  const [pizza, setPizza] = useState({})
+  const [pizza, setPizza] = useState({});
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
+  const [disabled, setDisabled] = useState(initialDisabled);
+
 
   const inputChange = (key, value) => {
     yup
@@ -74,6 +78,14 @@ const App = () => {
     setPizza(newPizza)
   }
 
+  useEffect(() => {
+    // 🔥 STEP 10- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
+    formSchema.isValid(formValues)
+      .then(valid => {
+        setDisabled(!valid);
+      })
+  }, [formValues])
+
   return (
     <>
       <Switch>
@@ -90,6 +102,7 @@ const App = () => {
           submit={submit}
           values={formValues}
           errors={formErrors}
+          disabled={disabled}
           />
         </Route>
 
