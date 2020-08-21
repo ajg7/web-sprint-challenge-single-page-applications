@@ -15,7 +15,7 @@ const Form = props => {
             <form>
                 <div>
                     <h2>Name on the Order</h2>
-                    <h3>Required</h3>
+                    <h4>Required</h4>
                 </div>
                     <label>
                         <input 
@@ -25,7 +25,7 @@ const Form = props => {
                     </label>
                 <div>
                     <h2>Choice of Size</h2>
-                    <h3>Required</h3>
+                    <h4>Required</h4>
                 </div>
                 <div className="size-selection">
                     <label>
@@ -40,7 +40,7 @@ const Form = props => {
                 </div>
                 <div>
                     <h2>Choice of Sauce</h2>
-                    <h3>Required</h3>
+                    <h4>Required</h4>
                 </div>
                 <div className="sauce-selection">
                     <label>Original Red
@@ -74,7 +74,7 @@ const Form = props => {
                 </div>
                 <div>
                     <h2>Add Toppings</h2> 
-                    <h3>Required</h3>
+                    <h4>Required</h4>
                 </div>
                 <div className="topping-selection">
                     <label> Cheese
@@ -108,7 +108,7 @@ const Form = props => {
                 </div>
                 <div>
                     <h2>Special Instructions</h2> 
-                    <h3>Optional</h3>
+                    <h4>Optional</h4>
                 </div>
                 <div className="special-instructions">
                     <label> Anything else you'd like to add?
