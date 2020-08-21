@@ -6,7 +6,6 @@ import pizza from "../Assets/Pizza.jpg"
 const Form = props => {
     const { submit, inputChange, values, checkboxChange, errors, disabled } = props;
     const history = useHistory();
-    let nameValue;
 
     const onInputChange = event => {
         const { name, value } = event.target;
@@ -64,10 +63,10 @@ const Form = props => {
                         name="size"
                         >
                             <option value="">- Select -</option>
-                            <option value="small">Small</option>
-                            <option value="medium">Medium</option>
-                            <option value="large">Large</option>
-                            <option value="extraLarge">Extra Large</option>
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                            <option value="Extra Large">Extra Large</option>
                         </select>
                     </label>
                 </div>
@@ -117,7 +116,7 @@ const Form = props => {
                     <label> Cheese
                         <input 
                         type="checkbox"
-                        name="cheese"
+                        name="Cheese"
                         checked={values.toppings.cheese}
                         onChange={onCheckboxChange}
                         />
@@ -125,7 +124,7 @@ const Form = props => {
                     <label> Pepperoni
                         <input 
                         type="checkbox"
-                        name="pepperoni"
+                        name="Pepperoni"
                         checked={values.toppings.pepperoni}
                         onChange={onCheckboxChange}
                         />
@@ -133,7 +132,7 @@ const Form = props => {
                     <label> Sausage
                         <input 
                         type="checkbox"
-                        name="sausage"
+                        name="Sausage"
                         checked={values.toppings.sausage}
                         onChange={onCheckboxChange}
                         />
@@ -141,7 +140,7 @@ const Form = props => {
                     <label> Mushrooms
                         <input 
                         type="checkbox"
-                        name="mushrooms"
+                        name="Mushrooms"
                         checked={values.toppings.mushrooms}
                         onChange={onCheckboxChange}
                         />
